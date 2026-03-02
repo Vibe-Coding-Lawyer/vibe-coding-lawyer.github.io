@@ -144,17 +144,16 @@
       animation: fadeUp 0.5s 0.62s forwards;
     }
     .cred {
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
+      display: grid;
+      grid-template-columns: 1.2rem 1fr;
+      gap: 0.5rem;
       font-size: 0.78rem;
       color: var(--mid);
+      align-items: baseline;
     }
-    .cred::before {
-      content: '//';
+    .cred-slash {
       color: var(--coral);
       font-size: 0.65rem;
-      flex-shrink: 0;
     }
     .cred strong {
       color: var(--dark);
@@ -283,6 +282,35 @@
       background: #4a7a63;
       animation: pulse 2s infinite;
     }
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.5rem 1.25rem;
+        align-items: flex-start;
+        padding-top: 2.5rem;
+      }
+      .card {
+        max-width: 100%;
+      }
+      .name {
+        font-size: clamp(2.4rem, 12vw, 3.2rem);
+      }
+      .stats {
+        gap: 1.25rem;
+      }
+      .stat-n {
+        font-size: 1.5rem;
+      }
+      .action-link {
+        padding: 1rem 1.25rem;
+      }
+      .pitch {
+        font-size: 1rem;
+      }
+      .live {
+        font-size: 0.58rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -301,9 +329,9 @@
     </p>
 
     <div class="creds">
-      <div class="cred"><strong>50+ enablement sessions</strong> — 30% accuracy improvement, platform adoption at scale</div>
-      <div class="cred"><strong>8 AI tools built</strong> — 4 deployed firm-wide, 4 on GitHub</div>
-      <div class="cred"><strong>250+ professionals coached</strong> through high-resistance change</div>
+      <div class="cred"><span class="cred-slash">//</span><span><strong>50+ enablement sessions</strong> — 30% accuracy improvement, platform adoption at scale</span></div>
+      <div class="cred"><span class="cred-slash">//</span><span><strong>8 AI tools built</strong> — 4 deployed firm-wide, 4 on GitHub</span></div>
+      <div class="cred"><span class="cred-slash">//</span><span><strong>250+ professionals coached</strong> through high-resistance change</span></div>
     </div>
 
     <div class="stats">
@@ -337,13 +365,13 @@
         </div>
       </a>
 
-      <a href="mailto:vlopez.jd@gmail.com" class="action-link">
+      <a href="/cdn-cgi/l/email-protection#c6b0aaa9b6a3bce8aca286a1aba7afaae8a5a9ab" class="action-link">
         <svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
         </svg>
         <div class="action-text">
           <span class="action-label">Email</span>
-          <span class="action-val">vlopez.jd@gmail.com</span>
+          <span class="action-val">Send an email</span>
         </div>
       </a>
 
@@ -356,10 +384,3 @@
           <span class="action-val">Download CV</span>
         </div>
       </a>
-    </div>
-
-    <div class="foot">© 2026 <span>Veronica Lopez</span> · See pain. Build fix. Deliver.</div>
-
-  </div>
-</body>
-</html>
